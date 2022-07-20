@@ -67,7 +67,9 @@ AddEventHandler('wasabi_fishing:startFishing', function()
                             TriggerEvent('wasabi_fishing:notify', Language['waiting_bite'])
                             Wait(math.random(Config.timeForBite.min, Config.timeForBite.max))
                             TriggerEvent('wasabi_fishing:notify', Language['got_bite'])
-                            Wait(1000)
+                            wait = math.random(5000,10000)
+                            Citizen.Wait(wait)
+			   			
                             local skillbar = CreateSkillbar(1, 'medium')
                             if skillbar then
                                 ClearPedTasks(ped)
